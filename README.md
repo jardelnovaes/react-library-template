@@ -5,6 +5,6 @@ It uses:
 * Storybook.
 * Yarn.
 
-Lib: [react-ui](react-ui)
-Sample App:[react-sample-app](react-sample-app}
+Lib: [react-ui](react-ui)  
+Sample App:[react-sample-app](react-sample-app)  
 
