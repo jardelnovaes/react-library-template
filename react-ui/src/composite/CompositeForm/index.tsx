@@ -1,5 +1,7 @@
 import * as React from 'react'
 import { Component } from 'react'
+import { CustomButton, CustomInput } from 'input'
+import { FormControl } from '@material-ui/core'
 
 export interface CompositeFormProps {
   text: string
@@ -8,9 +10,13 @@ export interface CompositeFormProps {
 class CompositeForm extends Component<CompositeFormProps> {
   render() {
     return (
-      <div>
-        <h2>Login: {this.props.text}</h2>
-      </div>
+      <>
+      <h2>Info: {this.props.text}</h2>
+      <FormControl>
+        <CustomInput text={'e-mail'} />
+        <CustomButton color='primary' text='Login' />
+      </FormControl>
+      </>
     )
   }
 }

@@ -1,3 +1,4 @@
 import CustomButton from './CustomButton'
+import CustomInput from './CustomInput'
 
-export { CustomButton }
+export { CustomButton, CustomInput }
