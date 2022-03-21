@@ -6,5 +6,5 @@ It uses:
 * Yarn.
 
 Lib: [react-ui](react-ui)  
-Sample App:[react-sample-app](react-sample-app)  
+Sample App: [react-sample-app](react-sample-app)  
 

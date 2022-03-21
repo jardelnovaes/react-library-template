@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/jardelnovaes/react-library-template/blob/main/README.md",
   "author": "Jardel Novaes",
-  "license": "Apache 2.0",
+  "license": "AFL-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/jardelnovaes/react-library-template.git"

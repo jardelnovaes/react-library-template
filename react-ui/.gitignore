@@ -22,8 +22,8 @@ lerna-debug.log*
 
 .yarn-integrity
 
-yarn.lock
-package-lock.json
+#yarn.lock
+#package-lock.json
 
 dist/
 

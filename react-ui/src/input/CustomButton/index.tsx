@@ -5,11 +5,8 @@ import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { createStyles, Theme } from '@material-ui/core/styles'
 import { withStyles, WithStyles } from '@material-ui/core/styles'
-// import { WithStyles } from '@material-ui/core/styles'
-//import { useTheme } from '@material-ui/core/styles'
-import clsx from 'clsx'
 
-//import styles from './styles'
+import clsx from 'clsx'
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -32,8 +29,6 @@ const styles = (theme: Theme) =>
       marginLeft: -12,
     },
   })
-
-//export default styles
 
 export interface CustonButtonProps extends WithStyles<typeof styles> {
   loading?: boolean
@@ -109,7 +104,7 @@ class CustonButton extends Component<CustonButtonProps, CustonButtonState> {
           onClick={() => this.handleOnClick(props.onClick)}
           variant={'contained'}
         >
-          {':2.1 ' + props.text}
+          {props.text}
           {isLoading && (
             <CircularProgress
               size={24}
