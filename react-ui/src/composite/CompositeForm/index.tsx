@@ -13,7 +13,7 @@ class CompositeForm extends Component<CompositeFormProps> {
       <>
       <h2>Info: {this.props.text}</h2>
       <FormControl>
-        <CustomInput text={'e-mail'} />
+        <CustomInput value={'e-mail'} id={'email'} label={'e-mail'} />
         <CustomButton color='primary' text='Login' />
       </FormControl>
       </>

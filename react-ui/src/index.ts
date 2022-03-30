@@ -1,6 +1,8 @@
-import CustomButton from './input/CustomButton'
-import CompositeForm from './composite/CompositeForm'
+import { CustomButton } from './input/CustomButton'
 import { CustomTheme } from './themes'
 
 export { CustomButton, CustomTheme }
-export { CompositeForm }
+
+//TODO Export it later
+//import CompositeForm from './composite/CompositeForm'
+//export { CompositeForm }

@@ -1,2 +1,2 @@
-import CompositeComponent from './CompositeComponent'
+import CompositeComponent from './CompositeForm'
 export { CompositeComponent }
