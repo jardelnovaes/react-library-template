@@ -30,7 +30,7 @@ const styles = (theme: Theme) =>
     },
   })
 
-export interface CustonButtonProps extends WithStyles<typeof styles> {
+export interface CustomButtonProps extends WithStyles<typeof styles> {
   loading?: boolean
   disabled?: boolean
   defaultProcessingBehavior?: boolean
@@ -41,14 +41,14 @@ export interface CustonButtonProps extends WithStyles<typeof styles> {
   endIcon?: ReactNode
 }
 
-export interface CustonButtonState {
+export interface CustomButtonState {
   defaultProcessingBehavior: boolean
   isLoading: boolean
   disabled: boolean
 }
 
-class CustonButton extends Component<CustonButtonProps, CustonButtonState> {
-  constructor(props: CustonButtonProps) {
+class CustomButton extends Component<CustomButtonProps, CustomButtonState> {
+  constructor(props: CustomButtonProps) {
     super(props)
     this.state = {
       defaultProcessingBehavior: props.defaultProcessingBehavior ?? true,
@@ -118,4 +118,4 @@ class CustonButton extends Component<CustonButtonProps, CustonButtonState> {
   }
 }
 
-export default withStyles(styles)(CustonButton)
+export default withStyles(styles)(CustomButton)
