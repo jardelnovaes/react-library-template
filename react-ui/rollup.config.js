@@ -14,6 +14,8 @@ import { terser } from 'rollup-plugin-terser'
 import pkg from './package.json'
 import buildDistFiles from './scripts/buildDistFiles'
 
+//TODO: Review to not include stories nor tests
+
 //TODO: Future check prod or DEV?
 const sourcemap = true
 const external = [...Object.keys({ ...pkg.peerDependencies })]
