@@ -1,42 +1,27 @@
-import * as React from 'react'
-
 import '@testing-library/jest-dom'
-//TODO: Migrate to MUI v5
-//import { ThemeProvider } from '@mui/material/styles'
-import { ThemeProvider, Theme, StyledEngineProvider } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles'
 import { render, screen } from '@testing-library/react'
 
 import { CustomTheme } from '../../themes'
 import { default as CustomButton } from './CustomButton'
-
-
-declare module '@mui/styles/defaultTheme' {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DefaultTheme extends Theme {}
-}
-
 
 describe('CustomButton Tests', () => {
   const loadingQuery = 'CustomButton-buttonProgress'
 
   test('Check Disabled', () => {
     render(
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={CustomTheme}>
-          <CustomButton text="Custom-Button" color={'primary'} disabled={true} />
-        </ThemeProvider>
-      </StyledEngineProvider>
+      <ThemeProvider theme={CustomTheme}>
+        <CustomButton text="Custom-Button" color={'primary'} disabled={true} />
+      </ThemeProvider>
     )
     expect(screen.getByRole('button', { name: 'Custom-Button' })).toBeDisabled()
   })
 
   test('Check Loading', () => {
     render(
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={CustomTheme}>
-          <CustomButton text="Custom-Button" color={'primary'} loading={true} />
-        </ThemeProvider>
-      </StyledEngineProvider>
+      <ThemeProvider theme={CustomTheme}>
+        <CustomButton text="Custom-Button" color={'primary'} loading={true} />
+      </ThemeProvider>
     )
     expect(screen.getByRole('button', { name: 'Custom-Button' })).toContainHTML(
       loadingQuery
@@ -49,15 +34,13 @@ describe('CustomButton Tests', () => {
     }
 
     render(
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={CustomTheme}>
-          <CustomButton
-            text="Default-Behavior"
-            color={'primary'}
-            onClick={mockedOnClick}
-          />
-        </ThemeProvider>
-      </StyledEngineProvider>
+      <ThemeProvider theme={CustomTheme}>
+        <CustomButton
+          text="Default-Behavior"
+          color={'primary'}
+          onClick={mockedOnClick}
+        />
+      </ThemeProvider>
     )
     const button = screen.getByRole('button', { name: 'Default-Behavior' })
 

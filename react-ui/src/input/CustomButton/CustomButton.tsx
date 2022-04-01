@@ -4,7 +4,8 @@ import { ReactNode, Component } from 'react'
 import Button from '@mui/material/Button'
 import CircularProgress from '@mui/material/CircularProgress'
 import { createStyles, Theme } from '@mui/material/styles'
-import { withStyles } from '@mui/material/styles'
+import { withStyles, WithStyles } from '@mui/styles'
+
 
 import clsx from 'clsx'
 
@@ -37,6 +38,7 @@ export interface CustomButtonProps extends WithStyles<typeof styles> {
   onClick?: () => Promise<void>
   text: string
   color: 'primary' | 'secondary' | 'inherit'
+  variant?: 'text' | 'outlined' | 'contained'
   startIcon?: ReactNode
   endIcon?: ReactNode
 }
@@ -102,7 +104,7 @@ class CustomButton extends Component<CustomButtonProps, CustomButtonState> {
           startIcon={props.startIcon}
           endIcon={props.endIcon}
           onClick={() => this.handleOnClick(props.onClick)}
-          variant={'contained'}
+          variant={props.variant}
         >
           {props.text}
           {isLoading && (

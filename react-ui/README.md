@@ -33,7 +33,7 @@ import { ThemeProvider } from '@mui/styles'
 import { CustomButton, CustomTheme } from '@jardelnovaes/react-ui'
 
 ...
-<ThemeProvider theme={ClamedTheme}>
+<ThemeProvider theme={CustomTheme}>
   <CssBaseline />
   <CustomButton text={'My Button'} />
 </ThemeProvider>
@@ -47,7 +47,7 @@ import { CustomButton } from '@jardelnovaes/react-ui/input'
 import { CustomTheme } from '@jardelnovaes/react-ui/themes'
 
 ...
-<ThemeProvider theme={ClamedTheme}>
+<ThemeProvider theme={CustomTheme}>
   <CssBaseline />
   <CustomButton text={'My Button'} />
 </ThemeProvider>

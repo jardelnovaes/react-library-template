@@ -1,15 +1,12 @@
-import * as React from 'react'
-
-import { ThemeProvider } from '@mui/styles'
 import { default as CheckBoxIcon } from '@mui/icons-material/CheckBox'
 import { default as SearchIcon } from '@mui/icons-material/Search'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { onClick } from './Utils'
 import { CustomButton } from '~/input/CustomButton'
-import { CustomTheme } from '~/themes'
 
 import '@stories/assets/fonts'
+
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -52,15 +49,11 @@ export default {
 } as ComponentMeta<typeof CustomButton>
 
 const TemplateLeftIcon: ComponentStory<typeof CustomButton> = (args) => (
-  <ThemeProvider theme={CustomTheme}>
-    <CustomButton {...args} endIcon={<SearchIcon />} />
-  </ThemeProvider>
+  <CustomButton {...args} endIcon={<SearchIcon />} />
 )
 
 const TemplateRightIcon: ComponentStory<typeof CustomButton> = (args) => (
-  <ThemeProvider theme={CustomTheme}>
-    <CustomButton {...args} startIcon={<CheckBoxIcon />} />
-  </ThemeProvider>
+  <CustomButton {...args} startIcon={<CheckBoxIcon />} />
 )
 
 export const Default = TemplateLeftIcon.bind({})

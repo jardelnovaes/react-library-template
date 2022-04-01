@@ -102,3 +102,13 @@ dist
 
 # TernJS port file
 .tern-port
+
+/.ideia
+/.idea/modules.xml
+/.idea/react-library-template.iml
+/.idea/runConfigurations.xml
+/.idea/vcs.xml
+/.idea/.gitignore
+
+/.vscode
+/.vscode/settings.json
