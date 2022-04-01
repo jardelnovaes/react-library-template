@@ -3,7 +3,7 @@ import * as React from 'react'
 import '@testing-library/jest-dom'
 //TODO: Migrate to MUI v5
 //import { ThemeProvider } from '@mui/material/styles'
-import { ThemeProvider } from '@material-ui/core'
+import { ThemeProvider } from '@mui/material'
 import { render, screen } from '@testing-library/react'
 
 import { CustomTheme } from '../../themes'

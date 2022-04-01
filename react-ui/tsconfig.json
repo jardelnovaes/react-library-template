@@ -32,13 +32,10 @@
     "noImplicitAny": true,
   },
 
+  "include": ["src/**/*", "stories/**/*"],
   "exclude": [
     "dist",
     "node_modules",
     "dev-docs",
-    "src/**/*.test.tsx",
-    "src/**/*.stories.tsx",
-    "stories/**",
-    "stories/themes/**"
-  ],
+  ]
 }

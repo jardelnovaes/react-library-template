@@ -18,7 +18,8 @@ import buildDistFiles from './scripts/buildDistFiles'
 
 //TODO: Future check prod or DEV?
 const sourcemap = true
-const external = [...Object.keys({ ...pkg.peerDependencies })]
+//const external = [...Object.keys({ ...pkg.peerDependencies })]
+const external = [{ "react": "^17.0.2"}, {"react-dom": "^17.0.2"}]
 
 const outDir = 'dist'
 const outDirTypes = `${outDir}/types`

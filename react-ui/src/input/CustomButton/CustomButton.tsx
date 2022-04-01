@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { ReactNode, Component } from 'react'
 
-import Button from '@material-ui/core/Button'
-import CircularProgress from '@material-ui/core/CircularProgress'
-import { createStyles, Theme } from '@material-ui/core/styles'
-import { withStyles, WithStyles } from '@material-ui/core/styles'
+import Button from '@mui/material/Button'
+import CircularProgress from '@mui/material/CircularProgress'
+import { createStyles, Theme } from '@mui/material/styles'
+import { withStyles, WithStyles } from '@mui/material/styles'
 
 import clsx from 'clsx'
 

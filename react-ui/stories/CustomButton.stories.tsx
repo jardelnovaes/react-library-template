@@ -23,15 +23,30 @@ export default {
     color: {
       options: ['primary', 'secondary', 'inherit'],
       control: { type: 'radio' },
+      description: 'Material UI color options',
+    },
+    variant: {
+      options: ['contained', 'text', 'outlined'],
+      control: { type: 'radio' },
+      description: 'Material UI variant options',
     },
     disabled: {
       type: { name: 'boolean' },
     },
     defaultProcessingBehavior: {
-      type: { name: 'boolean', defaultValue: true },
+      type: { name: 'boolean' },
+      description:
+        'When true the button will use default behave (disabled and loading process until the processing was completed)',
     },
     loading: {
       type: { name: 'boolean' },
+      description: 'Shows loading process',
+    },
+    startIcon: {
+      description: 'Material UI Icon before de text',
+    },
+    endIcon: {
+      description: 'Material UI Icon after de text',
     },
   },
 } as ComponentMeta<typeof CustomButton>

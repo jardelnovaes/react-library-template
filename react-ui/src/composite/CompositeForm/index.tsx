@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Component } from 'react'
 import { CustomButton, CustomInput } from 'input'
-import { FormControl } from '@material-ui/core'
+import { FormControl } from '@mui/material'
 
 export interface CompositeFormProps {
   text: string

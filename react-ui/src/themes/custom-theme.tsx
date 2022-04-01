@@ -1,6 +1,6 @@
-import { responsiveFontSizes } from '@material-ui/core'
-import { amber, common, blue, red } from '@material-ui/core/colors'
-import { createTheme } from '@material-ui/core/styles'
+import { responsiveFontSizes } from '@mui/material'
+import { amber, common, blue, red } from '@mui/material/colors'
+import { createTheme } from '@mui/material/styles'
 
 let customTheme = createTheme({
   typography: {
