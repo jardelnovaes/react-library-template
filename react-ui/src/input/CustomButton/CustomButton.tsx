@@ -4,7 +4,7 @@ import { ReactNode, Component } from 'react'
 import Button from '@mui/material/Button'
 import CircularProgress from '@mui/material/CircularProgress'
 import { createStyles, Theme } from '@mui/material/styles'
-import { withStyles, WithStyles } from '@mui/material/styles'
+import { withStyles } from '@mui/material/styles'
 
 import clsx from 'clsx'
 

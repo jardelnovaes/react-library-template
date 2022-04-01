@@ -2,7 +2,9 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "~/*": [ "./src/*" ],
+      "~/*": [ "src/*", "../src/*" ],
+      "@stories/*": [ "stories/*"],
+      "@mui/styled-engine": ["./node_modules/@mui/styled-engine-sc"]
     },
     /* Language and Environment */
     "target": "es2016",                                /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */

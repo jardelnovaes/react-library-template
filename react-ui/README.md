@@ -27,8 +27,8 @@ Library template for React frontend development.
 Exports all components at root and first subfolder level.
 
 ```ts
-import { CssBaseline } from '@material-ui/core'
-import { ThemeProvider } from '@material-ui/core/styles'
+import { CssBaseline } from '@mui/material'
+import { ThemeProvider } from '@mui/styles'
 
 import { CustomButton, CustomTheme } from '@jardelnovaes/react-ui'
 
@@ -40,8 +40,8 @@ import { CustomButton, CustomTheme } from '@jardelnovaes/react-ui'
 ```
 
 ```ts
-import { CssBaseline } from '@material-ui/core'
-import { ThemeProvider } from '@material-ui/core/styles'
+import { CssBaseline } from '@mui/material'
+import { ThemeProvider } from '@mui/styles'
 
 import { CustomButton } from '@jardelnovaes/react-ui/input'
 import { CustomTheme } from '@jardelnovaes/react-ui/themes'

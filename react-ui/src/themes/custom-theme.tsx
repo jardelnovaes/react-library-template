@@ -1,8 +1,8 @@
 import { responsiveFontSizes } from '@mui/material'
 import { amber, common, blue, red } from '@mui/material/colors'
-import { createTheme } from '@mui/material/styles'
+import { createTheme, adaptV4Theme } from '@mui/material/styles';
 
-let customTheme = createTheme({
+let customTheme = createTheme(adaptV4Theme({
   typography: {
     fontFamily: 'Roboto',
   },
@@ -26,7 +26,7 @@ let customTheme = createTheme({
       contrastText: common.white,
     },
   },
-})
+}))
 customTheme = responsiveFontSizes(customTheme)
 
 export default customTheme

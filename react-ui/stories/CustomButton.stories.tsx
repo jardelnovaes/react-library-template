@@ -1,15 +1,15 @@
 import * as React from 'react'
 
-import { ThemeProvider } from '@material-ui/core/styles'
-import { default as CheckBoxIcon } from '@material-ui/icons/CheckBox'
-import { default as SearchIcon } from '@material-ui/icons/Search'
+import { ThemeProvider } from '@mui/styles'
+import { default as CheckBoxIcon } from '@mui/icons-material/CheckBox'
+import { default as SearchIcon } from '@mui/icons-material/Search'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { onClick } from './Utils'
-import CustomButton from '~/input/CustomButton'
+import { CustomButton } from '~/input/CustomButton'
 import { CustomTheme } from '~/themes'
 
-import './assets/fonts'
+import '@stories/assets/fonts'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
