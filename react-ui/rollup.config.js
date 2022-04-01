@@ -1,9 +1,7 @@
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
-import glob from 'glob'
 import babel from 'rollup-plugin-babel'
-import copy from 'rollup-plugin-copy'
 import del from 'rollup-plugin-delete'
 import dts from 'rollup-plugin-dts'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
@@ -12,42 +10,30 @@ import sourcemaps from 'rollup-plugin-sourcemaps'
 import { terser } from 'rollup-plugin-terser'
 
 import pkg from './package.json'
-import buildDistFiles from './scripts/buildDistFiles'
 
 //TODO: Review to not include stories nor tests
+//dts plugin conflicts to alias/paths '@/' ou '~/'
 
 //TODO: Future check prod or DEV?
 const sourcemap = true
+const outDir = 'dist'
+const outDirTypes = `${outDir}/types`
+
 //const external = [...Object.keys({ ...pkg.peerDependencies })]
 const external = [{ "react": "^17.0.2"}, {"react-dom": "^17.0.2"}]
 
-const outDir = 'dist'
-const outDirTypes = `${outDir}/types`
-const multiEntryInput = {}
-const multiEntryInputTypes = {}
-const copyDisFilesTarget = buildCopyDistFiles()
-
-function buildCopyDistFiles() {
-  const target = [{ src: 'README.md', dest: 'dist/' }]
-  if (sourcemap) {
-    target.push({ src: 'src/', dest: 'dist/' })
-  }
-  return target
+const tsConfigOption = {
+  tsconfig: './tsconfig.json',
+  exclude: [
+    'dist',
+    'node_modules',
+    'dev-docs',
+    'src/**/*.test.tsx',
+    'src/**/*.stories.tsx',
+    'src/stories/**/*',
+    'stories/**/*',
+  ],
 }
-
-glob('src/*/index.{ts,tsx}', null, function (err, files) {
-  if (err) {
-    console.error(err)
-    return
-  }
-  //multiEntryInput[]
-  for (const file of files) {
-    const id = file.match(/\w+/g)[1]
-    console.log(`Adding file: ${file} to multiEntry items (id: ${id})`)
-    multiEntryInput[id] = file
-    multiEntryInputTypes[id] = `${outDirTypes}/${id}/index.d.ts`
-  }
-})
 
 export default [
   {
@@ -86,7 +72,7 @@ export default [
       peerDepsExternal(),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: './tsconfig.json' }),
+      typescript(tsConfigOption),
       sourcemaps(),
       terser(),
     ],
@@ -96,50 +82,6 @@ export default [
     output: [{ file: `${outDir}/index.d.ts`, format: 'esm' }],
     plugins: [
       dts(),
-      del({
-        targets: [`${outDirTypes}`],
-        hook: 'buildEnd',
-      }),
-    ],
-  },
-  {
-    input: multiEntryInput,
-    output: [
-      {
-        dir: `${outDir}`,
-        format: 'cjs',
-        exports: 'named',
-        sourcemap,
-      },
-    ],
-    external,
-    plugins: [
-      peerDepsExternal(),
-      resolve(),
-      commonjs(),
-      typescript({
-        tsconfig: './tsconfig.json',
-        compilerOptions: {
-          outDir: `${outDir}`,
-          declarationDir: `${outDirTypes}`,
-        },
-      }),
-    ],
-  },
-  {
-    input: multiEntryInputTypes,
-    output: [
-      {
-        dir: `${outDir}`,
-        format: 'esm',
-      },
-    ],
-    plugins: [
-      dts(),
-      copy({
-        targets: copyDisFilesTarget,
-      }),
-      buildDistFiles(outDir),
       del({
         targets: [`${outDirTypes}`],
         hook: 'buildEnd',

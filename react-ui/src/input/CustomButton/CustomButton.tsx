@@ -1,11 +1,9 @@
-import * as React from 'react'
 import { ReactNode, Component } from 'react'
 
 import Button from '@mui/material/Button'
 import CircularProgress from '@mui/material/CircularProgress'
-import { createStyles, Theme } from '@mui/material/styles'
-import { withStyles, WithStyles } from '@mui/styles'
-
+import { Theme } from '@mui/material/styles'
+import { createStyles, withStyles, WithStyles } from '@mui/styles'
 
 import clsx from 'clsx'
 
@@ -35,12 +33,12 @@ export interface CustomButtonProps extends WithStyles<typeof styles> {
   loading?: boolean
   disabled?: boolean
   defaultProcessingBehavior?: boolean
-  onClick?: () => Promise<void>
   text: string
   color: 'primary' | 'secondary' | 'inherit'
   variant?: 'text' | 'outlined' | 'contained'
   startIcon?: ReactNode
   endIcon?: ReactNode
+  onClick?: () => Promise<void>
 }
 
 export interface CustomButtonState {

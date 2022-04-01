@@ -1,24 +1,5 @@
 import { Dispatch, SetStateAction, ChangeEventHandler, useState, ChangeEvent } from 'react'
-
 import TextField from '@mui/material/TextField'
-import { createStyles, Theme} from '@mui/material/styles'
-import { withStyles } from '@mui/styles'
-
-const styles = (theme: Theme) =>
-  createStyles({
-    input: {
-      margin: theme.spacing(1),
-      position: 'relative',
-      opacity: 0.9,
-      '&:hover': {
-        opacity: 1,
-      },
-    },
-    inputDisabled: {
-      opacity: 1,
-    },
-  })
-
 
 export interface CustomInputProps {
   id: string
@@ -56,4 +37,4 @@ function CustomInput(props: CustomInputProps) {
   )
 }
 
-export default withStyles(styles)(CustomInput)
+export default CustomInput

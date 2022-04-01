@@ -1,5 +1,5 @@
 import { CustomTheme } from "../src";
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/styles/createStyles';
 import { ThemeProvider as Emotion10ThemeProvider } from '@emotion/react';
 
 //MUI V5 FIX from https://mui.com/guides/migration-v4/#storybook-emotion-with-v5
